@@ -1,1 +1,119 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Niha</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Splitting CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+
+    <!-- Confetti JS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Three.js Import Map -->
+    <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="canvas-container"></div>
+    <div id="decorations-container"></div>
+
+    <div class="audio-control">
+        <button id="mute-btn" class="glass-btn small">Play Music</button>
+        <audio id="bg-music" loop>
+            <!-- A cinematic placeholder space music -->
+            <source src="bg-music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- SCENE 1: LANDING -->
+            <section class="scene" id="scene-1">
+                <div class="content-wrapper centered">
+                    <h1 class="title" data-splitting>Happy Birthday<br><span class="name">Niha</span></h1>
+                    <p class="subtitle fade-in">Scroll to begin the journey</p>
+                </div>
+            </section>
+
+            <!-- SCENE 2: FLOATING FLOWERS -->
+            <section class="scene" id="scene-2">
+                <div class="content-wrapper right-align">
+                    <h2 class="section-title fade-up">For You, Niha</h2>
+                    <p class="section-text fade-up">I genuinely appreciate you and wanted to make something beautiful
+                        for your birthday.</p>
+                </div>
+            </section>
+
+            <!-- SCENE 3: CRYSTAL TUNNEL -->
+            <section class="scene" id="scene-3">
+                <div class="content-wrapper left-align">
+                    <h2 class="section-title fade-up">Gentle Moments</h2>
+                    <p class="section-text fade-up">May your year be filled with warm memories, deep laughter, and quiet
+                        peace.</p>
+                </div>
+            </section>
+
+            <!-- SCENE 4: MAGIC FOREST -->
+            <section class="scene" id="scene-4">
+                <div class="content-wrapper centered">
+                    <h2 class="section-title fade-up">Keep Shining</h2>
+                    <p class="section-text fade-up">Hope your presence brings a unique light to everyone around you.</p>
+                </div>
+            </section>
+
+            <!-- SCENE 5: BIRTHDAY WISHES -->
+            <section class="scene" id="scene-5">
+                <div class="content-wrapper right-align">
+                    <h2 class="section-title fade-up">Happy Birthday</h2>
+                    <p class="section-text fade-up">Wishing you a truly wonderful and dreamy year ahead.</p>
+                </div>
+            </section>
+
+            <!-- SCENE 6: FINAL CELEBRATION -->
+            <section class="scene" id="scene-6">
+                <div class="content-wrapper centered final-content">
+                    <button id="celebrate-btn" class="glass-btn premium">Celebrate</button>
+                    <div id="finale-message" class="hidden">
+                        <h1 class="title gradient-text">Happy Birthday</h1>
+                        <h2 class="name glow-text">Niha</h2>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+
+    <!-- Application -->
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
