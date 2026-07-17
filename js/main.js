@@ -19,16 +19,28 @@ function init() {
         gestureDirection: 'vertical',
         smooth: true,
         mouseMultiplier: 1,
-        smoothTouch: false,
+        smoothTouch: true, // Enables smooth scroll on mobile devices
         touchMultiplier: 2,
         infinite: false,
     });
 
-    function raf(time) {
-        lenis.raf(time);
+    // Sync Lenis with GSAP ScrollTrigger for better performance and mobile handling
+    if (window.ScrollTrigger) {
+        lenis.on('scroll', ScrollTrigger.update);
+    }
+
+    if (window.gsap) {
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+    } else {
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
         requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
 
     // 2. Initialize Three.js Scene
     sceneManager = new SceneManager('canvas-container');
